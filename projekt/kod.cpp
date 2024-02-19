@@ -188,7 +188,7 @@ int wyszukiwanieInterpolacyjne(int arr[], int size, int klucz) {
             if (arr[niski] == klucz) return niski;
             return -1;
         }
-        int pozycja = niski + ((double)(wysoki - niski) / (arr[wysoki] - arr[niski])) * (klucz - arr[niski]);
+        int pozycja = niski + ((double)(wysoki - niski) / (arr[wysoki] - arr[niski])) * (klucz - arr[niski]) / (double)(wysoki - niski);
         if (arr[pozycja] == klucz) return pozycja;
         if (arr[pozycja] < klucz) niski = pozycja + 1;
         else wysoki = pozycja - 1;
